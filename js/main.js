@@ -1,12 +1,13 @@
+let body = document.body;
 let siteHeader = document.querySelector('.site-header');
+
 if (siteHeader) {
-  if (document.documentElement.clientWidth < 991) {
+  if (document.documentElement.clientWidth < 768) {
     let headerHeight = siteHeader.offsetHeight;
     let nextFromHeader = siteHeader.nextElementSibling;
     nextFromHeader.style.paddingTop = `${headerHeight}px`;
   }
 
-  let siteHeaderWrapper = siteHeader.querySelector('.site-header__wrapper')
   let navToggle = siteHeader.querySelector(".nav__toggle");
   let navWrapper = siteHeader.querySelector(".nav__wrapper");
 
@@ -24,8 +25,9 @@ if (siteHeader) {
 
   const openMainMenu = (btn) => {
     addListenerOnOpenMainMenu();
-    siteHeaderWrapper.classList.add("active");
+    siteHeader.classList.add("active");
     navWrapper.classList.add("active");
+    body.classList.add("active");
     btn.setAttribute("aria-label", "close menu");
     btn.setAttribute("aria-expanded", "true");
   };
@@ -33,8 +35,9 @@ if (siteHeader) {
   const closeMainMenu = (btn) => {
     btn.setAttribute("aria-expanded", "false");
     btn.setAttribute("aria-label", "menu");
+    body.classList.remove("active");
     navWrapper.classList.remove("active");
-    siteHeaderWrapper.classList.remove("active");
+    siteHeader.classList.remove("active");
     document.removeEventListener('click', onClickAwayCloseMainMenu);
   };
 

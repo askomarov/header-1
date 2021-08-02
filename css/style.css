@@ -641,3 +641,91 @@ body.active > :not(.site-header) {
     color: #1062fe;
   }
 }
+
+.learn {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  bottom: 5vh;
+  left: 3vw;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  transform: translateY(150%);
+  transition: transform 0.5s ease-in-out, opacity 0.8s ease;
+}
+
+.learn.active {
+  pointer-events: all;
+  z-index: 999;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.learn__body {
+  max-width: 240px;
+  height: auto;
+  background: #ff75c1 url("https://kinsta.com/wp-content/themes/kinsta/images/devkinsta/notification-bg.svg") no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  padding: 30px 20px;
+  position: relative;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.learn__body > :not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.learn__btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.5s ease;
+  color: #c4c4c4;
+}
+
+.learn__btn-close:hover {
+  color: #015abe;
+}
+
+.learn__cta {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  border: 2px solid transparent;
+  border-radius: 80px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 11px 33px;
+  text-align: center;
+  background-color: #1062fe;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  outline: 0;
+}
+
+.learn__cta:focus, .learn__cta:focus-within {
+  border-color: #ffffff;
+}
+
+.learn__cta:hover {
+  background-color: #015abe;
+  background: transparent;
+  border-color: #015abe;
+  color: #015abe;
+}
+
+.learn__cta:active {
+  opacity: 0.7;
+}

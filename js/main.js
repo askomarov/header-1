@@ -90,3 +90,29 @@ if (siteHeader) {
 
 
 
+
+// modal learn
+
+const learnModal = document.querySelector('.learn');
+
+
+if (learnModal) {
+  const btnCloseLearnModal = learnModal.querySelector('.learn__btn-close');
+  const linkLearnMore = learnModal.querySelector('.learn__cta');
+
+  const showLearnMOdal = () => {
+    learnModal.classList.add('active');
+    btnCloseLearnModal.addEventListener('click', closeLearnMOdal);
+    linkLearnMore.addEventListener('click', closeLearnMOdal);
+  };
+  const closeLearnMOdal = () => {
+    learnModal.classList.remove('active');
+    btnCloseLearnModal.removeEventListener('click', closeLearnMOdal);
+    linkLearnMore.removeEventListener('click', closeLearnMOdal);
+  };
+
+  setTimeout(() => {
+    console.log('hiii');
+    showLearnMOdal();
+  }, 2000)
+};

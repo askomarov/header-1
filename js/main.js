@@ -78,24 +78,18 @@ if (siteHeader) {
     }, 200);
   };
 
-  userMenuDropdownToggle.addEventListener("click", function () {
+  userMenuDropdownToggle.addEventListener("click", function (evt) {
+    evt.preventDefault();
     if (userDropDownMenu.classList.contains("active")) {
       closeUserMenu(userMenuDropdownToggle);
     } else {
       openUserMenu(userMenuDropdownToggle);
     }
   });
-
 }
 
-
-
-
 // modal learn
-
 const learnModal = document.querySelector('.learn');
-
-
 if (learnModal) {
   const btnCloseLearnModal = learnModal.querySelector('.learn__btn-close');
   const linkLearnMore = learnModal.querySelector('.learn__cta');
@@ -112,7 +106,6 @@ if (learnModal) {
   };
 
   setTimeout(() => {
-    console.log('hiii');
     showLearnMOdal();
   }, 2000)
 };
